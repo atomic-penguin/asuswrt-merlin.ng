@@ -42,6 +42,8 @@ var modes_array = [[ "0", "No Filtering" ],
 		  [ "14", "CleanBrowsing Security" ],
 		  [ "15", "CleanBrowsing Adult" ],
 		  [ "16", "CleanBrowsing Family" ],
+                  [ "17", "AdGuard Advertisements" ],
+                  [ "18", "AdGuard Family" ],
 		  [ "12", "Comodo Secure DNS" ],
 		  [ "1",  "OpenDNS Home" ],
 		  [ "7",  "OpenDNS Family" ],
@@ -389,6 +391,11 @@ function showhide_settings(state) {
 							services are currently supported (you can also manually
                                                         specify another DNS server through the custom entries):
 							<ul>
+								<li><a target="_blank" style="font-weight: bolder; cursor:pointer;text-decoration: underline;" href="https://adguard.com/en/adguard-dns/overview.html">AdGuard</a>
+                                                                        <ul><li>Advertisements = ads, counters, malicious websites
+                                                                            <li>Family = Ads + adult content
+                                                                        </ul>
+
 								<li><a target="_blank" style="font-weight: bolder; cursor:pointer;text-decoration: underline;" href="https://cleanbrowsing.org/">CleanBrowsing</a>
 									<ul><li>Security = Malicious content
 									    <li>Adult = Malicious + Sexual content

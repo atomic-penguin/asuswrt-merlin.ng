@@ -40,6 +40,8 @@ int dnsfilter_support_dot(int mode)
 		case 14:
 		case 15:
 		case 16:	// CleanBrowsing 1-3
+                case 17:        // AdGuard 1-2
+                case 18:
 			return 1;
 		default:
 			return 0;
@@ -67,7 +69,9 @@ int get_dns_filter(int proto, int mode, char **server)
 		{ "9.9.9.9", "" },		/* 13: Quad9 */
 		{ "185.228.168.9", "" },	/* 14: CleanBrowsing Security */
 		{ "185.228.168.10", "" },	/* 15: CleanBrowsing Adult */
-		{ "185.228.168.168", "" }	/* 16: CleanBrowsing Family */
+		{ "185.228.168.168", "" },	/* 16: CleanBrowsing Family */
+                { "176.103.130.130", "176.103.130.131" },      /* 17: AdGuard Advertisements */
+                { "176.103.130.132", "176.103.130.134" }      /* 18: AdGuard Family */
         };
 #ifdef RTCONFIG_IPV6
 	char *server6_table[][2] = {
@@ -87,7 +91,9 @@ int get_dns_filter(int proto, int mode, char **server)
 		{"2620:fe::fe", "2620:fe::9"},	/* 13: Quad9 */
 		{"2a0d:2a00:1::2", "2a0d:2a00:2::2"},	/* 14: CleanBrowsing Security */
 		{"2a0d:2a00:1::1", "2a0d:2a00:2::1"},	/* 15: CleanBrowsing Adult */
-		{"2a0d:2a00:1::", "2a0d:2a00:2::"}	/* 16: CleanBrowsing Family */
+		{"2a0d:2a00:1::", "2a0d:2a00:2::"},	/* 16: CleanBrowsing Family */
+                {"2a00:5a60::ad1:0ff", "2a00:5a60::ad2:0ff"}, /* 17: AdGuard Advertisements */
+                {"2a00:5a60::bad1:0ff", "2a00:5a60::bad2:0ff"} /* 18: AdGuard Family */
         };
 #endif
 
